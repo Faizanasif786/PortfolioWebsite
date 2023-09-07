@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks For Your Feedback</title>
+</head>
+<body>
+    <h1>Thanks For Your Feedback</h1>
+    <div id="feedback-container">
+        <p>Name: <span id="feedback-name"></span></p>
+        <p>Message: <span id="feedback-message"></span></p>
+    </div>
+    
+    <script>
+        // JavaScript code to retrieve and display feedback data
+        var feedbackData = localStorage.getItem('feedbackData');
+        if (feedbackData) {
+            feedbackData = JSON.parse(feedbackData);
+            document.getElementById('feedback-name').textContent = feedbackData.name;
+            document.getElementById('feedback-message').textContent = feedbackData.message;
+        }
+    </script>
+</body>
+</html>
